@@ -26,6 +26,12 @@ class AccountScreen extends StatelessWidget {
               image: 'assets/images/anzcard.png',
             ),
             _buildAccountTile(
+              title: 'Personal Loan',
+              amount: '-\$4.20',
+              image:
+                  'assets\/images/sean-oulashin-KMn4VEeEPR8-unsplash 1@2x.png',
+            ),
+            _buildAccountTile(
               title: 'Open a New Account',
               amount: '-\$4.20',
               image: null,
@@ -104,7 +110,7 @@ class AccountScreen extends StatelessWidget {
               fontFamily: 'Inter',
             ),
           ),
-          const SizedBox(height: 30), // Increased space below 'Accounts'
+          const SizedBox(height: 10), // Increased space below 'Accounts'
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -126,7 +132,7 @@ class AccountScreen extends StatelessWidget {
               Image.asset('assets/images/arrow.png', width: 24, height: 24),
             ],
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 15.74),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -134,12 +140,15 @@ class AccountScreen extends StatelessWidget {
               _buildBalanceColumn('Balance', '\$41.28'),
             ],
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 18),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               _buildFixedActionButton('Transfer', 'assets/images/transfer.png'),
+              SizedBox(width: 9),
               _buildFixedActionButton('Pay', 'assets/images/dollar.png'),
+              SizedBox(width: 9),
+
               _buildFixedActionButton('More', 'assets/images/more.png'),
             ],
           ),
@@ -159,7 +168,7 @@ class AccountScreen extends StatelessWidget {
               style: const TextStyle(color: Color(0xffCCFFFFFF), fontSize: 11),
             ),
             const SizedBox(width: 4),
-            const Icon(Icons.info_outline, color: Colors.blueAccent, size: 14),
+            const Icon(Icons.info_outline, color: Colors.blueAccent, size: 12),
           ],
         ),
         Text(
@@ -177,8 +186,8 @@ class AccountScreen extends StatelessWidget {
 
   Widget _buildFixedActionButton(String label, String imageAsset) {
     return SizedBox(
-      width: 100,
-      height: 60,
+      width: 106,
+      height: 48,
       child: Container(
         decoration: BoxDecoration(
           color: const Color(0x4D000000),
@@ -188,13 +197,14 @@ class AccountScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(imageAsset, width: 20, height: 20),
+            Image.asset(imageAsset, width: 16, height: 16),
             const SizedBox(height: 2),
             Text(
               label,
               style: const TextStyle(
                 color: Colors.white,
-                fontSize: 12,
+                fontSize: 11,
+                height: 1.0,
                 fontFamily: 'Inter',
                 fontWeight: FontWeight.w500,
               ),
@@ -221,17 +231,16 @@ class AccountScreen extends StatelessWidget {
             children: [
               image != null
                   ? ClipRRect(
-                      borderRadius: BorderRadius.circular(6),
-                      child: Image.asset(
-                        image,
-                        width: 60,
-                        height: 40,
-                        fit: BoxFit.cover,
+                      borderRadius: BorderRadius.circular(2),
+                      child: Container(
+                        height: 37,
+                        width: 52,
+                        child: Image.asset(image, height: 27, width: 45),
                       ),
                     )
                   : Container(
-                      width: 60,
-                      height: 40,
+                      width: 52,
+                      height: 37,
                       decoration: BoxDecoration(
                         color: Colors.blue[50],
                         borderRadius: BorderRadius.circular(6),
@@ -248,7 +257,9 @@ class AccountScreen extends StatelessWidget {
                     title,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
-                      color: isNew ? const Color(0xFF0265AB) : Colors.black,
+                      color: isNew
+                          ? const Color(0xFF0265AB)
+                          : Color(0xCC000000), // Black with 80% opacity
                       fontWeight: FontWeight.w500,
                       fontSize: 13,
                       fontFamily: 'Inter',
@@ -262,8 +273,8 @@ class AccountScreen extends StatelessWidget {
                   Text(
                     amount,
                     style: const TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.w700,
+                      color: Color(0xCC000000),
+                      fontWeight: FontWeight.bold,
                       fontSize: 13,
                       fontFamily: 'Inter',
                     ),
