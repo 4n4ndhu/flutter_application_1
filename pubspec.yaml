@@ -1,0 +1,47 @@
+name: flutter_application_1
+description: "A new Flutter project."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.8.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/anzcard.png
+    - assets/images/personaloan.png
+    - assets/images/accounts.png
+    - assets/images/foryou.png
+    - assets/images/anzplus.png
+    - assets/images/support.png
+    - assets/images/profile.png
+    - assets/images/transfer.png
+    - assets/images/dollar.png
+    - assets/images/more.png
+    - assets/images/anzlogo.png
+    - assets/images/anzbg.png
+    - assets/images/arrow.png
+
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Inter-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Inter-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Inter-Bold.ttf
+          weight: 700
